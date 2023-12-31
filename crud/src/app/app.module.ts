@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SearchDeleteComponent } from './search-delete/search-delete.component';
-
+import{HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { UserRegistrationService } from './user-registration.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,9 +16,11 @@ import { SearchDeleteComponent } from './search-delete/search-delete.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [ UserRegistrationService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
